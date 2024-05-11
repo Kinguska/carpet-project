@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "carpet-szte": {
+      "hosting": {
+        "carpet-project": [
+          "carpet-szte"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "carpet-szte"
+  }
+}

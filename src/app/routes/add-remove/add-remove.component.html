@@ -1,0 +1,58 @@
+<section>
+    <h1>Carpet Market</h1>
+    <p>Here you can add your carpets to the market</p>
+    <form [formGroup]="addForm" (ngSubmit)="addCarpet()">
+        <caption>Add</caption>
+        <mat-form-field>
+            <mat-label for="name">Name</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label for="image_url">Image</mat-label>
+            <mat-select formControlName="image_url">
+                <mat-option value="blue">Blue</mat-option>
+                <mat-option value="greenyellow">Green, yellow</mat-option>
+                <mat-option value="red&black">Red&black</mat-option>
+                <mat-option value="green">Green</mat-option>
+                <mat-option value="gray">Gray</mat-option>
+                <mat-option value="white">White</mat-option>
+                <mat-option value="black">Black</mat-option>
+                <mat-option value="colorflower">Colorful flowers</mat-option>
+                <mat-option value="colorful">Colorful</mat-option>
+                <mat-option value="flower">Flower</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label for="color">Color</mat-label>
+            <input matInput type="text" formControlName="color">
+        </mat-form-field>
+        <br>
+        <!--
+            <input matInput type="url" formControlName="image_url">
+            <mat-form-field>
+            <mat-label for="type">Type</mat-label>
+            <mat-select>
+                <mat-option value="one">Option 1</mat-option>
+                <mat-option value="two">Option 2</mat-option>
+            </mat-select>
+        </mat-form-field>
+        -->
+        <mat-form-field>
+            <mat-label for="type">Type</mat-label>
+            <input matInput type="text" formControlName="type">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label for="from">From</mat-label>
+            <input matInput type="text" formControlName="from">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label for="price">Price</mat-label>
+            <input matInput type="number" formControlName="price">
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="accent">Add</button>
+    </form>
+</section>

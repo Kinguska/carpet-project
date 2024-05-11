@@ -1,0 +1,61 @@
+@if (choosenCarpet) {
+    <section>
+        <h1>{{choosenCarpet.name}}</h1>
+        <div class="cards">
+            <mat-card [ngClass]="'cardborder'">
+                <mat-card-header [ngClass]="'namecolor'">
+                    <p>{{choosenCarpet.name}}</p>
+                </mat-card-header>
+                <img mat-card-image src="{{choosenCarpet.image_url}}">
+                <mat-card-content>
+                    <div class="property">
+                        <p>Color: </p>
+                        <p>{{choosenCarpet.color}}</p>
+                    </div>
+                    <div class="property">
+                        <p>Type: </p>
+                        <p>{{choosenCarpet.type}}</p>
+                    </div>
+                    <div class="property">
+                        <p>From: </p>
+                        <p>{{choosenCarpet.from}}</p>
+                    </div>
+                    <div class="property">
+                        <p>Price: </p>
+                        <p>{{choosenCarpet.price}}$</p>
+                    </div>
+                    <div class="property">
+                        <p>User: </p>
+                        <p>{{choosenCarpet.user}}</p>
+                    </div>
+                    @if (choosenCarpet.user == loggedInUser?.email) {
+                        <div>
+                            <p>MINE</p>
+                        </div>
+                        <button mat-raised-button color="warn" (click)="deleteCarpet(choosenCarpet)">Delete</button>
+                    }
+                    @else if (choosenCarpet.bought == false && loggedInUser != null) {
+                        <button mat-icon-button
+                            (click)="buyCarpet(choosenCarpet, $event)">
+                            <mat-icon>shopping_cart</mat-icon>
+                        </button>
+                    }
+                    @else if (choosenCarpet.bought == true && loggedInUser != null) {
+                        <div>
+                            <p>ALREADY BOUGHT</p>
+                            <p>Buyer: {{getBuyInfo?.user}}</p>
+                            <p>Date: {{getBuyInfo?.date | datepipe}}</p>
+                        </div>
+                    }
+                </mat-card-content>
+              </mat-card>
+            </div>
+    </section>
+}
+<!--
+@else if () {
+    <section>
+        <h1 [ngStyle]="{'color': 'red', 'padding': '15%'}">There is no such carpet</h1>
+    </section>
+}
+-->

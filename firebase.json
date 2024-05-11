@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "carpet-project",
+      "public": "dist/carpet-project/browser",
+      "frameworksBackend": {}
+    }
+  ]
+}

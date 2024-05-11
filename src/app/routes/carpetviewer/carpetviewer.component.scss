@@ -1,0 +1,66 @@
+section {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+.fontawesomesvg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -.125em;
+    fill: black;
+    display: inline-block;
+}
+
+mat-card{
+   margin: 1rem;
+}
+
+mat-card-header {
+    margin: 1rem;
+}
+
+mat-card-content {
+    margin: 1rem;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+mat-card-content p {
+    font-size: 1.2rem;
+}
+.property{
+    display: flex;
+}
+.property p{
+    width: 200px;
+}
+
+.property p:first-child{
+    font-weight: bold;
+}
+mat-card-header p{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.namecolor {
+    background-color: rgb(190, 231, 245);
+  }
+
+  .cardborder{
+    border: 1px solid rgb(190, 231, 245);;
+    border-radius: 10px;
+  }

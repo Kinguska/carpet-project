@@ -1,0 +1,54 @@
+<section>
+    <div>
+        <mat-checkbox (change)="justcanbuy()"  [checked]="checked"> Just purchasable</mat-checkbox>
+        
+    </div>
+    <div class="cards">
+        <mat-card [ngClass]="'cardborder'" *ngFor="let carpet of carpets$ | async"  (click)="selectCarpet()" [routerLink]="['carpet', carpet.name]">
+            <mat-card-header [ngClass]="'namecolor'">
+                <p>{{carpet.name}}</p>
+            </mat-card-header>
+            <img mat-card-image src="{{carpet.image_url}}">
+            <mat-card-content>
+                <div class="property">
+                    <p>Color: </p>
+                    <p>{{carpet.color}}</p>
+                </div>
+                <div class="property">
+                    <p>Type: </p>
+                    <p>{{carpet.type}}</p>
+                </div>
+                <div class="property">
+                    <p>From: </p>
+                    <p>{{carpet.from}}</p>
+                </div>
+                <div class="property">
+                    <p>Price: </p>
+                    <p>{{carpet.price}}$</p>
+                </div>
+                <div class="property">
+                    <p>User: </p>
+                    <p>{{carpet.user}}</p>
+                </div>
+                @if (carpet.user == loggedInUser?.email) {
+                    <div>
+                        <p>MINE</p>
+                    </div>
+                    <button mat-raised-button color="warn" (click)="deleteCarpet(carpet, $event)">Delete</button>
+                }
+                @else if (carpet.bought == false && loggedInUser != null) {
+                    <button mat-icon-button
+                        (click)="buyCarpet(carpet, $event)">
+                        <mat-icon>shopping_cart</mat-icon>
+                    </button>
+                }
+                @else if (carpet.bought == true && loggedInUser != null) {
+                    <div>
+                        <p>ALREADY BOUGHT</p>
+                    </div>
+                }
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <app-carpetviewer></app-carpetviewer>
+</section>

@@ -1,0 +1,32 @@
+
+.sidenav-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    //background-color: rgb(255, 236, 240);
+    //background-color: rgb(221, 248, 221);
+    //background-color: rgb(220, 241, 248);
+  }
+
+  .toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    //background-color: rgb(255, 207, 214);
+    //background-color: rgb(230, 90, 114);
+    //background-color: rgb(190, 231, 245);
+  }
+
+  mat-sidenav {
+    background-color: rgb(255, 207, 214);
+    width: 120px;
+    //background-color: rgb(255, 159, 174);
+    //background-color: rgb(180, 248, 180);
+    //background-color: rgb(190, 231, 245);
+    //background-color: rgb(209, 83, 247);
+  }
+
+ 
